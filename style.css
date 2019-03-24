@@ -1,0 +1,7 @@
+.grid {
+    text-align: center;
+}
+
+#container {
+    display: grid;
+}

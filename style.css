@@ -1,7 +1,35 @@
 .grid {
     text-align: center;
+    width: auto;
+    height: auto;
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+
+}
+
+button[name=reset] {
+    width: 100%;
+}
+
+#frame {
+   
+    width: 100%;
+    position: relative;
+    border-bottom: 1px solid black;
+    border-left: 1px solid black;
 }
 
 #container {
+    position: absolute;
     display: grid;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+}
+
+#frame:before{
+    content: "";
+    display: block;
+    padding-top: 100%;
 }

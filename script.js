@@ -1,3 +1,8 @@
+function newGrid() {
+    var response = window.prompt("Select new grid size","");
+    createGrid(response, response);
+}
+
 function createGrid(width, height) {
     const container = document.querySelector('div#container');
     container.setAttribute('style', `grid-template-rows: repeat(${width}, 1fr) ; grid-template-columns: repeat(${height}, 1fr`);
@@ -8,8 +13,16 @@ function createGrid(width, height) {
         for (var j = 0 ; j < height ; j++) {
             const box = document.createElement('div');
             box.classList.add('grid');
-            box.textContent = "(" + i + "," + j + ")";
             container.appendChild(box);
         }
     }
+
+    const cells = document.querySelectorAll('.grid');
+
+    cells.forEach((cell) => {
+        // and for each one we add a 'click' listener
+        cell.addEventListener("mouseenter", (e) => {
+        cell.style.backgroundColor = 'blue';
+        });
+    });
 }
